@@ -13,11 +13,25 @@ const meta: Meta<typeof MyButton> = {
     },
     template: "<MyButton v-bind='args' />",
   }),
-  // ここにまとめて args を定義
   args: {
     label: "ボタン",
     variant: "primary",
     size: "medium",
+  },
+  // ここに args の型情報を定義
+  argTypes: {
+    variant: {
+      control: {
+        type: "inline-radio",
+      },
+      options: ["primary", "secondary"],
+    },
+    size: {
+      control: {
+        type: "select",
+      },
+      options: ["small", "medium", "large"],
+    },
   },
 };
 
