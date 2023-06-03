@@ -34,6 +34,24 @@ const meta: Meta<typeof MyPage> = {
     },
   };
 
+// ここで指定している defaultViewport は、前回定義したカスタム Viewport です
+
+export const ForPc: Story = {
+    parameters: {
+      viewport: {
+        defaultViewport: "pc",
+      },
+    },
+  };
+  
+  export const ForMobile: Story = {
+    parameters: {
+      viewport: {
+        defaultViewport: "mobile",
+      },
+    },
+  };
+  
 export const Default: Story = {};
 
 export default meta;
