@@ -13,24 +13,14 @@ const meta: Meta<typeof MyButton> = {
     },
     template: "<MyButton v-bind='args' />",
   }),
-};
-
-export const Default: Story = {
+  // ここにまとめて args を定義
   args: {
     label: "ボタン",
+    variant: "primary",
+    size: "medium",
   },
 };
 
-export const Login: Story = {
-  args: {
-    label: "ログイン",
-  },
-};
-
-export const SignUp: Story = {
-  args: {
-    label: "会員登録",
-  },
-};
+export const Default: Story = {};
 
 export default meta;
