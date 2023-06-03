@@ -13,23 +13,18 @@ const meta: Meta<typeof MyPage> = {
     }),
     // PC, Mobile それぞれのビューポートを作成 (高さは指定しない)
     parameters: {
-      viewport: {
-        viewports: {
-          pc: {
-            name: "Min PC Layout",
-            styles: {
-              width: "992px",
-              height: "100%",
-            },
+      backgrounds: {
+        default: "twitter",
+        values: [
+          {
+            name: "twitter",
+            value: "#00aced",
           },
-          mobile: {
-            name: "Min Mobile Layout",
-            styles: {
-              width: "375px",
-              height: "100%",
-            },
+          {
+            name: "facebook",
+            value: "#3b5998",
           },
-        },
+        ],
       },
     },
   };
