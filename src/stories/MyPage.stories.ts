@@ -11,10 +11,25 @@ const meta: Meta<typeof MyPage> = {
       components: { MyPage },
       template: "<MyPage />",
     }),
-    // parameters で Viewport のプリセットを設定
+    // PC, Mobile それぞれのビューポートを作成 (高さは指定しない)
     parameters: {
       viewport: {
-        viewports: INITIAL_VIEWPORTS,
+        viewports: {
+          pc: {
+            name: "Min PC Layout",
+            styles: {
+              width: "992px",
+              height: "100%",
+            },
+          },
+          mobile: {
+            name: "Min Mobile Layout",
+            styles: {
+              width: "375px",
+              height: "100%",
+            },
+          },
+        },
       },
     },
   };
