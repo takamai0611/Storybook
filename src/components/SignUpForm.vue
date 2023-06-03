@@ -15,12 +15,11 @@ const emits = defineEmits<{
 }>();
 
 function onSubmit() {
-  // エラーを出す条件を逆にしてしまった
-  errors.name = state.name !== "" ? "名前を入力してください" : "";
-  errors.age = state.age > 18 ? "18歳以上でなければ登録できません" : "";
+  errors.name = state.name === "" ? "名前を入力してください" : "";
+  errors.age = state.age < 18 ? "18歳以上でなければ登録できません" : "";
 
   if (errors.name === "" && errors.age === "") {
-    // TODO: ここでログイン処理をしてトップページに戻る
+    emits("submit", { name: state.name, age: state.age });
   }
 }
 
