@@ -10,36 +10,12 @@ const meta: Meta<typeof MyPage> = {
     components: { MyPage },
     template: "<MyPage />",
   }),
-  parameters: {
-    viewport: {
-      viewports: {
-        pc: {
-          name: "Min PC Layout",
-          styles: {
-            width: "992px",
-            height: "100%",
-          },
-        },
-        mobile: {
-          name: "Min Mobile Layout",
-          styles: {
-            width: "375px",
-            height: "100%",
-          },
-        },
-      },
-    },
-  },
 };
 
-export const ForPc: Story = {
-  parameters: {
-    viewport: {
-      defaultViewport: "pc",
-    },
-  },
-};
+// デフォルトで PC レイアウトになるので、ここでは何も指定しない
+export const ForPc: Story = {};
 
+// デフォルト設定を上書きしてモバイルレイアウトにする
 export const ForMobile: Story = {
   parameters: {
     viewport: {
