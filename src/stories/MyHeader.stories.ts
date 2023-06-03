@@ -5,16 +5,22 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 type Story = StoryObj<typeof MyHeader>;
 
 const meta: Meta<typeof MyHeader> = {
-  title: "MyHeader",
-  component: MyHeader,
-  render: (args) => ({
-    components: { MyHeader },
-    setup() {
-      return { args };
+    title: "MyHeader",
+    component: MyHeader,
+    render: (args) => ({
+      components: { MyHeader },
+      setup() {
+        return { args };
+      },
+      template: "<MyHeader v-bind='args' />",
+    }),
+    // ここに追加
+    argTypes: {
+      onLogin: { action: "onLogin" },
+      onLogout: { action: "onLogout" },
+      onSignUp: { action: "onSignUp" },
     },
-    template: "<MyHeader v-bind='args' />",
-  }),
-};
+  };
 
 export const Login: Story = {
   args: {
